@@ -1,0 +1,473 @@
+
+
+
+
+<!-- Official COde -->
+
+ <% if current_user.role == "Manager" %>
+<h2 style="margin-left: 280px">Review Performance Form</h2>
+<div class="card" style="width: 50rem; margin-left: 280px">
+
+
+  <%= form_for :survey_forms  do |f| %>
+
+
+  <ul class="list-group list-group-flush">
+
+
+    <li class="list-group-item">
+
+      <div class="field">
+
+
+        Employee Rating
+        <%= @quest.quality %>
+        <hr>
+        <%= f.label :"Quality - The extent to which an employee's work is completed thoroughly and correctly following established process & procedures. Required paperwork is thorough and neat."%><br />
+        <%= f.text_field :quality, autofocus: true, class:"form-control" %>
+      </div>
+
+    </li>
+
+
+    <li class="list-group-item">
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.reliability %><hr>
+        <%= f.label :"Productivity / Independence / Reliability - The extent to which an employee produces a significant volume of work efficiently in a specified period of time. Ability to work independently with little or no direction/ follow-up to complete tasks/job assignment."%><br />
+        <%= f.text_field :reliability, autofocus: true , class:"form-control"%>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.job_knowledge %><hr>
+        <%= f.label :"Job Knowledge - The extent to which an employee perform the job. Employee possesses the practical and technical knowledge required of the job. " %><br />
+        <%= f.text_field :job_knowledge, autofocus: true, class:"form-control" %>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.attendence %><hr>
+        <%= f.label :"Attendance -The extent to which an employee is punctual, observes prescribed work break/meal periods and has an acceptable overall attendance record. Employee's willingness to work overtime as required. Employee comes in as the time prescribed by office rules. " %><br />
+        <%= f.text_field :attendence, autofocus: true, class:"form-control" %>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.commitment %><hr>
+        <%= f.label :"Interpersonal Relationships / Cooperation /Commitment - The extent to which employee is willing and demonstrates the ability to cooperate, work and communicate with coworkers, supervisors, subordinates and/or outside contacts. Employee accepts and responds to change in a positive manner. Accepts job assignments and additional duties willingly, takes responsibility for own performance and job assignments. " %><br />
+        <%= f.text_field :commitment, autofocus: true, class:"form-control" %>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+      <div class="field">
+        Employee Rating
+        <%= @quest.creativity %><hr>
+        <%= f.label :"Initiative/ Creativity - The extent to which an employee seeks out new assignments, proposes improved work methods, suggests ideas to eliminate waste, finds new and better ways of doing things. " %><br />
+        <%= f.text_field :creativity, autofocus: true , class:"form-control"%>
+      </div>
+
+    </li>
+
+
+    <li class="list-group-item">
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.adherence_to_policy %><hr>
+        <%= f.label :"Adherence to Policy - The extent to which the employees follows company policies, procedures and work conduct rules. Complies with and follows all safety rules and regulations, wears required safety equipment. " %><br />
+        <%= f.text_field :adherence_to_policy, autofocus: true, class:"form-control" %>
+      </div>
+
+    </li>
+
+
+    <li class="list-group-item">
+
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.lead %><hr>
+        <%= f.label :"Lead (if applicable)- The extent to which the employee demonstrates proper judgment and decision-making skills when directing others. Directs work flow in assigned areas effectively to meet production / area goals " %><br />
+        <%= f.text_field :lead, autofocus: true , class:"form-control"%>
+      </div>
+
+    </li>
+
+    <li class="list-group-item">
+
+
+      <div class="field">
+        Employee Rating
+        <%= @quest.improvement_needed %><hr>
+        <%= f.label :"Specific areas of needed improvement and goals set for next review:
+ " %><br />
+        <%= f.text_field :improvement_needed, autofocus: true, class:"form-control" %>
+      </div>
+    </li>
+
+    <li class="list-group-item">
+
+
+
+
+        <div class="field">
+          Employee Rating
+          <%= @quest.accomplishments %><hr>
+          <%= f.label :"Accomplishments or new abilities demonstrated since last review? " %><br />
+          <%= f.text_field :accomplishments, autofocus: true, class:"form-control" %>
+        </div>
+    </li>
+
+    <%= f.text_field :user_id, value: @quest.user_id ,hidden:true %>
+    <%= f.text_field :submitted_by, value: current_user.email , hidden:true %>
+  </ul>
+
+  <div class="card-footer">
+
+    <div class="actions">
+      <%= f.submit "Submit" %>
+    </div>
+  </div>
+      <% end %>
+
+</div>
+
+ <% elsif current_user.role == "Employee"%>
+   <h2 style="margin-left: 280px">Review Performance Form</h2>
+   <div class="card" style="width: 50rem; margin-left: 280px">
+
+
+     <%= form_for :survey_forms  do |f| %>
+
+
+       <ul class="list-group list-group-flush">
+
+
+         <li class="list-group-item">
+
+           <div class="field">
+
+
+
+             <hr>
+             <%= f.label :"Quality - The extent to which an employee's work is completed thoroughly and correctly following established process & procedures. Required paperwork is thorough and neat."%><br />
+             <%= f.text_field :quality, autofocus: true, class:"form-control" %>
+           </div>
+
+         </li>
+
+
+         <li class="list-group-item">
+
+           <div class="field">
+
+             <%= f.label :"Productivity / Independence / Reliability - The extent to which an employee produces a significant volume of work efficiently in a specified period of time. Ability to work independently with little or no direction/ follow-up to complete tasks/job assignment."%><br />
+             <%= f.text_field :reliability, autofocus: true , class:"form-control"%>
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+
+           <div class="field">
+
+             <%= f.label :"Job Knowledge - The extent to which an employee perform the job. Employee possesses the practical and technical knowledge required of the job. " %><br />
+             <%= f.text_field :job_knowledge, autofocus: true, class:"form-control" %>
+           </div>
+         </li>
+
+         <li class="list-group-item">
+
+           <div class="field">
+
+             <%= f.label :"Attendance -The extent to which an employee is punctual, observes prescribed work break/meal periods and has an acceptable overall attendance record. Employee's willingness to work overtime as required. Employee comes in as the time prescribed by office rules. " %><br />
+             <%= f.text_field :attendence, autofocus: true, class:"form-control" %>
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+
+
+           <div class="field">
+
+             <%= f.label :"Interpersonal Relationships / Cooperation /Commitment - The extent to which employee is willing and demonstrates the ability to cooperate, work and communicate with coworkers, supervisors, subordinates and/or outside contacts. Employee accepts and responds to change in a positive manner. Accepts job assignments and additional duties willingly, takes responsibility for own performance and job assignments. " %><br />
+             <%= f.text_field :commitment, autofocus: true, class:"form-control" %>
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+           <div class="field">
+
+             <%= f.label :"Initiative/ Creativity - The extent to which an employee seeks out new assignments, proposes improved work methods, suggests ideas to eliminate waste, finds new and better ways of doing things. " %><br />
+             <%= f.text_field :creativity, autofocus: true , class:"form-control"%>
+           </div>
+
+         </li>
+
+
+         <li class="list-group-item">
+
+           <div class="field">
+
+             <%= f.label :"Adherence to Policy - The extent to which the employees follows company policies, procedures and work conduct rules. Complies with and follows all safety rules and regulations, wears required safety equipment. " %><br />
+             <%= f.text_field :adherence_to_policy, autofocus: true, class:"form-control" %>
+           </div>
+
+         </li>
+
+
+         <li class="list-group-item">
+
+
+           <div class="field">
+
+             <%= f.label :"Lead (if applicable)- The extent to which the employee demonstrates proper judgment and decision-making skills when directing others. Directs work flow in assigned areas effectively to meet production / area goals " %><br />
+             <%= f.text_field :lead, autofocus: true , class:"form-control"%>
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+
+
+           <div class="field">
+
+             <%= f.label :"Specific areas of needed improvement and goals set for next review:
+ " %><br />
+             <%= f.text_field :improvement_needed, autofocus: true, class:"form-control" %>
+           </div>
+         </li>
+
+         <li class="list-group-item">
+
+
+
+
+           <div class="field">
+
+             <%= f.label :"Accomplishments or new abilities demonstrated since last review? " %><br />
+             <%= f.text_field :accomplishments, autofocus: true, class:"form-control" %>
+           </div>
+         </li>
+
+         <%= f.text_field :user_id, value: current_user.id ,hidden:true %>
+         <%= f.text_field :submitted_by, value: current_user.email , hidden:true %>
+       </ul>
+
+       <div class="card-footer">
+
+         <div class="actions">
+           <%= f.submit "Submit" %>
+         </div>
+       </div>
+     <% end %>
+
+   </div>
+
+
+   <% else %>
+
+
+   <h2 style="margin-left: 280px">Review Performance Form</h2>
+   <div class="card" style="width: 50rem; margin-left: 280px">
+
+
+     <%= form_for :survey_forms  do |f| %>
+
+
+       <ul class="list-group list-group-flush">
+
+
+         <li class="list-group-item">
+
+           <div class="field">
+
+
+             Employee Rating
+             <%= @quest.quality %>
+             <hr>
+             <%= f.label :"Quality - The extent to which an employee's work is completed thoroughly and correctly following established process & procedures. Required paperwork is thorough and neat."%><br />
+
+           </div>
+
+         </li>
+
+
+         <li class="list-group-item">
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.reliability %><hr>
+             <%= f.label :"Productivity / Independence / Reliability - The extent to which an employee produces a significant volume of work efficiently in a specified period of time. Ability to work independently with little or no direction/ follow-up to complete tasks/job assignment."%><br />
+
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.job_knowledge %><hr>
+             <%= f.label :"Job Knowledge - The extent to which an employee perform the job. Employee possesses the practical and technical knowledge required of the job. " %><br />
+
+           </div>
+         </li>
+
+         <li class="list-group-item">
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.attendence %><hr>
+             <%= f.label :"Attendance -The extent to which an employee is punctual, observes prescribed work break/meal periods and has an acceptable overall attendance record. Employee's willingness to work overtime as required. Employee comes in as the time prescribed by office rules. " %><br />
+
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.commitment %><hr>
+             <%= f.label :"Interpersonal Relationships / Cooperation /Commitment - The extent to which employee is willing and demonstrates the ability to cooperate, work and communicate with coworkers, supervisors, subordinates and/or outside contacts. Employee accepts and responds to change in a positive manner. Accepts job assignments and additional duties willingly, takes responsibility for own performance and job assignments. " %><br />
+
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+           <div class="field">
+             Employee Rating
+             <%= @quest.creativity %><hr>
+             <%= f.label :"Initiative/ Creativity - The extent to which an employee seeks out new assignments, proposes improved work methods, suggests ideas to eliminate waste, finds new and better ways of doing things. " %><br />
+
+           </div>
+
+         </li>
+
+
+         <li class="list-group-item">
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.adherence_to_policy %><hr>
+             <%= f.label :"Adherence to Policy - The extent to which the employees follows company policies, procedures and work conduct rules. Complies with and follows all safety rules and regulations, wears required safety equipment. " %><br />
+
+           </div>
+
+         </li>
+
+
+         <li class="list-group-item">
+
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.lead %><hr>
+             <%= f.label :"Lead (if applicable)- The extent to which the employee demonstrates proper judgment and decision-making skills when directing others. Directs work flow in assigned areas effectively to meet production / area goals " %><br />
+
+           </div>
+
+         </li>
+
+         <li class="list-group-item">
+
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.improvement_needed %><hr>
+             <%= f.label :"Specific areas of needed improvement and goals set for next review:
+ " %><br />
+
+           </div>
+         </li>
+
+         <li class="list-group-item">
+
+
+
+
+           <div class="field">
+             Employee Rating
+             <%= @quest.accomplishments %><hr>
+             <%= f.label :"Accomplishments or new abilities demonstrated since last review? " %><br />
+
+           </div>
+
+
+
+
+
+         </li>
+
+
+
+<li class="list-group-item">
+         <div class="field">
+
+           <%= f.label :"Give Remarks" %><br />
+           <%= f.text_field :remarks, autofocus: true , class:"form-control"%>
+         </div>
+
+</li>
+         <%= f.text_field :user_id, value: @quest.user_id ,hidden:true %>
+         <%= f.text_field :submitted_by, value: current_user.email , hidden:true %>
+
+       </ul>
+
+       <div class="card-footer">
+
+         <div class="actions">
+           <%= f.submit "Submit" %>
+         </div>
+       </div>
+     <% end %>
+
+   </div>
+
+
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

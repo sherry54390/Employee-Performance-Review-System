@@ -1,0 +1,110 @@
+<html>
+<head>
+  <style>
+      /* Navbar */
+
+      .tm-navbar {
+          position: relative;
+          width: 100%;
+          z-index: 100;
+          background-color: transparent;
+          transition: all 0.3s ease;
+      }
+
+      .tm-navbar.scroll {
+          background-color: white;
+          border-bottom: 1px solid #e9ecef;
+      }
+
+      .navbar-brand {
+          color: black;
+          font-size: 1.4rem;
+          font-weight: bold;
+      }
+
+      .navbar-brand:hover,
+      .tm-navbar.scroll .navbar-brand:hover {
+          color: #38B;
+      }
+
+      .tm-navbar.scroll .navbar-brand {
+          color: #369;
+      }
+
+      .nav-item {
+          list-style: none;
+      }
+
+      .tm-nav-link {
+          color: white;
+      }
+
+      .tm-navbar.scroll .tm-nav-link {
+          color: #369;
+      }
+
+      .tm-navbar.scroll .tm-nav-link:hover,
+      .tm-navbar.scroll .tm-nav-link.current,
+      .tm-nav-link:hover {
+          color: #FFF;
+          background-color: #369;
+      }
+
+      .navbar-toggler {
+          border: 1px solid white;
+          padding-left: 10px;
+          padding-right: 10px;
+      }
+
+      .navbar-toggler-icon {
+          color: white;
+          padding-top: 6px;
+      }
+
+      .tm-navbar.scroll .navbar-toggler {
+          border: 1px solid #707070;
+      }
+
+      .tm-navbar.scroll .navbar-toggler-icon {
+          color: #707070;
+      }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md tm-navbar  bg-light" id="tmNav">
+  <div class="container">
+    <div class="tm-next">
+      <%= link_to 'Active HR', root_path, class:'navbar-brand' %>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars navbar-toggler-icon"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <% if !user_signed_in? %>
+
+          <li class="nav-item">
+            <%= link_to 'Sign Up', new_user_registration_path, class:'nav-link' %>
+          </li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,102 @@
+<h2> Submitted By Employee</h2>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+  <tr>
+
+    <th>Quality</th>
+    <th>Reliability</th>
+    <th>Job_knowledge</th>
+    <th>Attendence</th>
+    <th>Commitment</th>
+    <th>Creativity</th>
+    <th>Adherence to policy</th>
+    <th>Lead</th>
+    <th>Improvement needed</th>
+    <th>Accomplishments</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+
+    <tr>
+
+      <td><%= @question.quality %></td>
+          <td><%= @question.reliability %></td>
+
+        <td>  <%= @question.job_knowledge %></td>
+        <td><%= @question.attendence %><br></td>
+        <td> <%= @question.commitment %></td>
+        <td><%= @question.creativity %></td>
+        <td><%= @question.adherence_to_policy %></td>
+      <td><%= @question.lead %></td>
+      <td><%= @question.improvement_needed %></td>
+      <td><%= @question.accomplishments %></td>
+
+
+
+
+
+
+    </tr>
+
+  </tbody>
+</table>
+<% if @managerquestion != nil %>
+<h2>Submitted By Manager</h2>
+
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+  <tr>
+
+    <th>Quality</th>
+    <th>Reliability</th>
+    <th>Job_knowledge</th>
+    <th>Attendence</th>
+    <th>Commitment</th>
+    <th>Creativity</th>
+    <th>Adherence to policy</th>
+    <th>Lead</th>
+    <th>Improvement needed</th>
+    <th>Accomplishments</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+
+  <tr>
+
+    <td><%= @managerquestion.quality %></td>
+    <td><%= @managerquestion.reliability %></td>
+
+    <td>  <%= @managerquestion.job_knowledge %></td>
+    <td><%= @managerquestion.attendence %><br></td>
+    <td> <%= @managerquestion.commitment %></td>
+    <td><%= @managerquestion.creativity %></td>
+    <td><%= @managerquestion.adherence_to_policy %></td>
+    <td><%= @managerquestion.lead %></td>
+    <td><%= @managerquestion.improvement_needed %></td>
+    <td><%= @managerquestion.accomplishments %></td>
+
+
+
+
+
+
+  </tr>
+
+  </tbody>
+</table>
+    <% end %>
+<% if @hrRemarks != nil %>
+<h2>Remarks By HR</h2>
+
+    <h3><%= @hrRemarks.remarks %></h3>
+
+<% end %>
+
+

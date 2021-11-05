@@ -1,0 +1,80 @@
+<h3>You are new Manager Here</h3>
+
+
+
+<h4>Employees Under You</h4>
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+  <tr>
+
+    <th>Name</th>
+    <th>Cnic</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Role</th>
+    <th>Joining Date</th>
+    <th>Form Status</th>
+    <th>Fill Form</th>
+
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @users.each do |employee| %>
+    <tr>
+      <% if employee.role == "Employee" %>
+        <% if current_user.id.to_s == employee.assigned_manager%>
+
+        <td><%= employee.first_name %>
+          <%= employee.last_name %>
+        </td>
+
+        <td>  <%= employee.cnic %></td>
+        <td><%= employee.email %><br></td>
+        <td> <%= employee.phone_number %></td>
+        <td><%= employee.role %></td>
+        <td><%= employee.joining_date %></td>
+
+
+
+
+          <% if  employee.survey_forms.any? %>
+            <% @abc =  employee.survey_forms[0].id %>
+            <td><%= link_to 'Submitted Form',  survey_form_path(id: @abc) %></td>
+          <% else %>
+            <td><%= link_to 'Form Not Submiited'%></td>
+          <%end%>
+
+
+          <% if  employee.survey_forms.any? %>
+            <% @abc =  employee.survey_forms[0].id %>
+
+            <td><%= link_to 'Submit Form',  new_survey_path(id:@abc)%></td>
+          <% else %>
+            <td><%= link_to 'Wait till Employee Submit their Forms'%></td>
+          <%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <% end %>
+      <% end %>
+
+
+
+    </tr>
+  <% end  %>
+  </tbody>
+
+</table>
