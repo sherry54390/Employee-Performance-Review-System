@@ -48,9 +48,14 @@
           <%end%>
 
 
-          <% if  employee.survey_forms.any? %>
-            <% @abc =  employee.survey_forms[0].id %>
+          <% if   employee.survey_forms.count >= 2 %>
+            <td><%= link_to 'Remarks Submitted' %></td>
 
+
+
+
+          <% elsif employee.survey_forms.any? && employee.survey_forms.count >= 1 %>
+            <% @abc =  employee.survey_forms[0].id %>
             <td><%= link_to 'Submit Form',  new_survey_path(id:@abc)%></td>
           <% else %>
             <td><%= link_to 'Wait till Employee Submit their Forms'%></td>
@@ -68,7 +73,10 @@
 
 
 
-      <% end %>
+
+          <%end%>
+
+
       <% end %>
 
 

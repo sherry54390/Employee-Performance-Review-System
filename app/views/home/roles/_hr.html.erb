@@ -128,12 +128,16 @@
 
 
 
-            <% if  employee.survey_forms.any? && employee.survey_forms.count > 1 %>
+            <% if employee.survey_forms.count >= 3 %>
+              <td><%= link_to 'Remarks Submitted' %></td>
+
+
+
+            <% elsif employee.survey_forms.any? && employee.survey_forms.count > 1 %> %>
               <% @abc =  employee.survey_forms[1].id %>
               <% @name = employee %>
               <td><%= link_to 'Give Remark',  new_survey_path(id:@abc)%></td>
-
-            <% else %>
+                <% else  %>
               <td><%= link_to 'Form Not Submiited'%></td>
 
 

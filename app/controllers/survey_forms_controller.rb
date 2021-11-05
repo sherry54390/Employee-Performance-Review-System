@@ -2,12 +2,31 @@ class SurveyFormsController < ApplicationController
 
 
   def new
-    if current_user.role == "Employee"
+
+
+
+
       @question= SurveyForm.new
-    elsif
+
+    if current_user.role == "HR"
       @quest = SurveyForm.find(params[:id])
-      @question= SurveyForm.new
-      end
+      user = User.find(@quest.user_id)
+
+      @quest = SurveyForm.where(user_id: user.id,submitted_by: user.email).last
+
+      ud = User.find(SurveyForm.find(params[:id]).user.assigned_manager).email
+      @managerquestion = SurveyForm.find_by(submitted_by: ud, user_id: @quest.user_id)
+
+
+    elsif current_user.role == "Manager"
+      @quest = SurveyForm.find(params[:id])
+            @quest = SurveyForm.find(params[:id])
+            @question= SurveyForm.new
+
+
+
+
+    end
   end
 
   def show

@@ -1,4 +1,14 @@
 <h3>You are new Employee Here</h3>
 
+<% if   current_user.survey_forms.count >= 1 %>
+  <td><%= link_to 'Remarks Submitted' %></td>
 
-<%= link_to "VIEW FORM" , new_survey_form_path %>
+
+
+<% else %>
+  <td><%= link_to 'Submit Form',  new_survey_form_path%></td>
+<%end%>
+
+
+
+
