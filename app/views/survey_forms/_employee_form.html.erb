@@ -169,7 +169,7 @@
 
 
             <%= f.label :"Quality - The extent to which an employee's work is completed thoroughly and correctly following established process & procedures. Required paperwork is thorough and neat."%><br />
-            <%= f.text_area :quality, autofocus: true, class:"form-control" %>
+            <%= f.number_field :quality, required: true,  autofocus: true, class:"form-control" %>
 
 
           </div>
@@ -187,7 +187,7 @@
           <div class="form-group">
             <
             <%= f.label :"Productivity / Independence / Reliability - The extent to which an employee produces a significant volume of work efficiently in a specified period of time. Ability to work independently with little or no direction/ follow-up to complete tasks/job assignment."%><br />
-            <%= f.text_area :reliability, autofocus: true , class:"form-control"%>
+            <%= f.number_field :reliability, required: true ,min: 0, max: 99, class:"form-control"%>
           </div>
           <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
         </div>
@@ -202,7 +202,7 @@
           <div class="form-group">
 
             <%= f.label :"Job Knowledge - The extent to which an employee perform the job. Employee possesses the practical and technical knowledge required of the job. " %><br />
-            <%= f.text_area :job_knowledge, autofocus: true, class:"form-control" %>
+            <%= f.number_field :job_knowledge , required: true, autofocus: true, class:"form-control" %>
           </div>
           <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
         </div>
@@ -217,7 +217,7 @@
           <div class="form-group">
 
             <%= f.label :"Attendance -The extent to which an employee is punctual, observes prescribed work break/meal periods and has an acceptable overall attendance record. Employee's willingness to work overtime as required. Employee comes in as the time prescribed by office rules. " %><br />
-            <%= f.text_area :attendence, autofocus: true, class:"form-control" %>
+            <%= f.number_field :attendence , required: true, autofocus: true, class:"form-control" %>
 
 
           </div>
@@ -236,7 +236,7 @@
           <div class="form-group">
             <
             <%= f.label :"Interpersonal Relationships / Cooperation /Commitment - The extent to which employee is willing and demonstrates the ability to cooperate, work and communicate with coworkers, supervisors, subordinates and/or outside contacts. Employee accepts and responds to change in a positive manner. Accepts job assignments and additional duties willingly, takes responsibility for own performance and job assignments. " %><br />
-            <%= f.text_area :commitment, autofocus: true, class:"form-control" %>
+            <%= f.number_field :commitment , required: true, autofocus: true, class:"form-control" %>
 
 
           </div>
@@ -254,7 +254,7 @@
           <div class="form-group">
 
             <%= f.label :"Initiative/ Creativity - The extent to which an employee seeks out new assignments, proposes improved work methods, suggests ideas to eliminate waste, finds new and better ways of doing things. " %><br />
-            <%= f.text_area :creativity, autofocus: true , class:"form-control"%>
+            <%= f.number_field :creativity, required: true, autofocus: true , class:"form-control"%>
 
 
           </div>
@@ -272,7 +272,7 @@
           <div class="form-group">
 
             <%= f.label :"Adherence to Policy - The extent to which the employees follows company policies, procedures and work conduct rules. Complies with and follows all safety rules and regulations, wears required safety equipment. " %><br />
-            <%= f.text_area :adherence_to_policy, autofocus: true, class:"form-control" %>
+            <%= f.number_field :adherence_to_policy , required: true, autofocus: true, class:"form-control" %>
 
           </div>
 
@@ -289,7 +289,7 @@
           <div class="form-group">
 
             <%= f.label :"Lead (if applicable)- The extent to which the employee demonstrates proper judgment and decision-making skills when directing others. Directs work flow in assigned areas effectively to meet production / area goals " %><br />
-            <%= f.text_area :lead, autofocus: true , class:"form-control"%>
+            <%= f.number_field :lead , required: true, autofocus: true , class:"form-control"%>
 
 
           </div>
@@ -307,7 +307,7 @@
           <div class="form-group">
 
             <%= f.label :"Specific areas of needed improvement and goals set for next review:"%>
-            <%= f.text_area :improvement_needed, autofocus: true, class:"form-control" %>
+            <%= f.number_field :improvement_needed,  required: true , autofocus: true, class:"form-control" %>
 
 
           </div>
@@ -328,7 +328,7 @@
           <div class="form-group">
 
             <%= f.label :"Accomplishments or new abilities demonstrated since last review? " %><br />
-            <%= f.text_area :accomplishments, autofocus: true, class:"form-control" %>
+            <%= f.number_field :accomplishments , required: true , autofocus: true, class:"form-control" %>
 
           </div>
 

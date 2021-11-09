@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'survey_forms/new' => 'survey_forms#new', as: 'new_survey'
   post 'survey_forms/new' => 'survey_forms#create', as: 'create_survey'
   resources :survey_forms
+  get 'edit', to: 'home#edit'
+  post 'edit', to: 'home#update'
   resources :home
   #get 'managers' => 'home/roles' , as: 'view_manager'
   #get 'fill_form' ,to: 'survey_forms#fill_form/:id', as: 'fill_form'

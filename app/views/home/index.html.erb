@@ -2,21 +2,20 @@
 <% if user_signed_in? %>
   <% if current_user.role == "HR" %>
 
-    <h1 style="z-index: -1"> Welcome Back <%= current_user.first_name %> <%= current_user.last_name %></h1>
+
       <%= render 'home/roles/hr' %>
 
 
   <% elsif current_user.role == "Manager" %>
-    <h1> Hello <%= current_user.first_name%> <%=  current_user.last_name  %></h1>
+
     <%= render 'home/roles/manager' %>
 
     <% else %>
-    <h1> Hello <%= current_user.first_name%> <%=  current_user.last_name  %></h1>
+
     <%= render 'home/roles/employee' %>
 
   <% end %>
   <br>
-  <%= link_to 'Logout', destroy_user_session_path , method: 'delete' %>
 <% else %>
   <%= render 'home/home_page' %>
 <% end  %>

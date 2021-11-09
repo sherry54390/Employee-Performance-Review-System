@@ -19,6 +19,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'devise', '~> 4.8'
+gem 'cancancan'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -50,6 +51,9 @@ group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
+  gem 'kaminari'
+  gem 'will_paginate', '~> 3.1.1'
+  gem 'will_paginate-bootstrap'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end

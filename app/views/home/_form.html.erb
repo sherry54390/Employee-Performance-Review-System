@@ -32,8 +32,8 @@
   <div>
 
 
-      <%= f.label :assigned_manager %><br />
-      <%= f.collection_select :assigned_manager, @managers, :id ,:id, { class: 'chosen-select'} %>
+    <%= f.label :assigned_manager %><br />
+    <%= f.collection_select :assigned_manager, @managers, :id ,:id, :prompt => true %>
 
 
 
@@ -71,6 +71,6 @@
   </div>
   <br>
   <div class="actions">
-    <%= f.submit "Create user" , class:"btn btn-primary " %>
+    <%= f.submit  class:"btn btn-primary " %>
   </div>
 <% end %>

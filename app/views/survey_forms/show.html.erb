@@ -36,13 +36,16 @@
 
 
 
-
+<% employee_total_score = Integer(@question.quality) + Integer(@question.reliability) + Integer(@question.job_knowledge) + Integer(@question.attendence) + Integer(@question.commitment) + Integer(@question.creativity) + Integer(@question.adherence_to_policy) + Integer(@question.lead) + Integer(@question.improvement_needed) +  Integer(@question.accomplishments)%>
 
 
     </tr>
 
   </tbody>
 </table>
+<h3>Employee Total Score</h3>
+<h3><%= employee_total_score %></h3>
+
 <% if @managerquestion != nil %>
 <h2>Submitted By Manager</h2>
 
@@ -88,9 +91,12 @@
 
 
   </tr>
+  <% manager_total_score = Integer(@managerquestion.quality) + Integer(@managerquestion.reliability) + Integer(@managerquestion.job_knowledge) + Integer(@managerquestion.attendence) + Integer(@managerquestion.commitment) + Integer(@managerquestion.creativity) + Integer(@managerquestion.adherence_to_policy) + Integer(@managerquestion.lead) + Integer(@managerquestion.improvement_needed) +  Integer(@managerquestion.accomplishments)%>
 
   </tbody>
 </table>
+  <h3>Manager Total Score</h3>
+ <h3> <%= manager_total_score %></h3>
     <% end %>
 <% if @hrRemarks != nil %>
   <h2>Remarks By HR</h2>
