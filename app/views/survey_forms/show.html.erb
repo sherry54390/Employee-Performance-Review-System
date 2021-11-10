@@ -1,107 +1,86 @@
-<h2> Submitted By Employee</h2>
-<table class="table table-striped table-bordered table-hover">
-  <thead class="thead-dark">
-  <tr>
+<style>
+  h4{
+      color: black;
 
-    <th>Quality</th>
-    <th>Reliability</th>
-    <th>Job_knowledge</th>
-    <th>Attendence</th>
-    <th>Commitment</th>
-    <th>Creativity</th>
-    <th>Adherence to policy</th>
-    <th>Lead</th>
-    <th>Improvement needed</th>
-    <th>Accomplishments</th>
-
-  </tr>
-  </thead>
-
-  <tbody>
-
-
-    <tr>
-
-      <td><%= @question.quality %></td>
+  }
+</style>
+<div style="margin: 30px">
+<h4> Submitted By Employee</h4>
+<table class="table table-striped table-borderless table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th>Quality</th>
+        <th>Reliability</th>
+        <th>Job_knowledge</th>
+        <th>Attendence</th>
+        <th>Commitment</th>
+        <th>Creativity</th>
+        <th>Adherence to policy</th>
+        <th>Lead</th>
+        <th>Improvement needed</th>
+        <th>Accomplishments</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @question.quality %></td>
           <td><%= @question.reliability %></td>
-
-        <td>  <%= @question.job_knowledge %></td>
-        <td><%= @question.attendence %><br></td>
-        <td> <%= @question.commitment %></td>
-        <td><%= @question.creativity %></td>
-        <td><%= @question.adherence_to_policy %></td>
-      <td><%= @question.lead %></td>
-      <td><%= @question.improvement_needed %></td>
-      <td><%= @question.accomplishments %></td>
-
-
-
-<% employee_total_score = Integer(@question.quality) + Integer(@question.reliability) + Integer(@question.job_knowledge) + Integer(@question.attendence) + Integer(@question.commitment) + Integer(@question.creativity) + Integer(@question.adherence_to_policy) + Integer(@question.lead) + Integer(@question.improvement_needed) +  Integer(@question.accomplishments)%>
-
-
-    </tr>
-
-  </tbody>
+          <td><%= @question.job_knowledge %></td>
+          <td><%= @question.attendence %><br></td>
+          <td><%= @question.commitment %></td>
+          <td><%= @question.creativity %></td>
+          <td><%= @question.adherence_to_policy %></td>
+          <td><%= @question.lead %></td>
+          <td><%= @question.improvement_needed %></td>
+          <td><%= @question.accomplishments %></td>
+          <% employee_total_score = Integer(@question.quality) + Integer(@question.reliability) + Integer(@question.job_knowledge) + Integer(@question.attendence) + Integer(@question.commitment) + Integer(@question.creativity) + Integer(@question.adherence_to_policy) + Integer(@question.lead) + Integer(@question.improvement_needed) + Integer(@question.accomplishments) %>
+        </tr>
+    </tbody>
 </table>
-<h3>Employee Total Score</h3>
-<h3><%= employee_total_score %></h3>
-
+<!--Score-->
+<h4>Employee Total Score</h4>
+<h4><%= employee_total_score %></h4><hr>
 <% if @managerquestion != nil %>
-<h2>Submitted By Manager</h2>
+    <h4>Submitted By Manager</h4>
+    <table class="table table-striped table-borderless table-hover">
+        <thead class="thead-light">
+          <tr>
+            <th>Quality</th>
+            <th>Reliability</th>
+            <th>Job_knowledge</th>
+            <th>Attendence</th>
+            <th>Commitment</th>
+            <th>Creativity</th>
+            <th>Adherence to policy</th>
+            <th>Lead</th>
+            <th>Improvement needed</th>
+            <th>Accomplishments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @managerquestion.quality %></td>
+            <td><%= @managerquestion.reliability %></td>
+            <td><%= @managerquestion.job_knowledge %></td>
+            <td><%= @managerquestion.attendence %><br></td>
+            <td><%= @managerquestion.commitment %></td>
+            <td><%= @managerquestion.creativity %></td>
+            <td><%= @managerquestion.adherence_to_policy %></td>
+            <td><%= @managerquestion.lead %></td>
+            <td><%= @managerquestion.improvement_needed %></td>
+            <td><%= @managerquestion.accomplishments %></td>
+          </tr>
+          <% manager_total_score = Integer(@managerquestion.quality) + Integer(@managerquestion.reliability) + Integer(@managerquestion.job_knowledge) + Integer(@managerquestion.attendence) + Integer(@managerquestion.commitment) + Integer(@managerquestion.creativity) + Integer(@managerquestion.adherence_to_policy) + Integer(@managerquestion.lead) + Integer(@managerquestion.improvement_needed) + Integer(@managerquestion.accomplishments) %>
 
-
-<table class="table table-striped table-bordered table-hover">
-  <thead class="thead-dark">
-  <tr>
-
-    <th>Quality</th>
-    <th>Reliability</th>
-    <th>Job_knowledge</th>
-    <th>Attendence</th>
-    <th>Commitment</th>
-    <th>Creativity</th>
-    <th>Adherence to policy</th>
-    <th>Lead</th>
-    <th>Improvement needed</th>
-    <th>Accomplishments</th>
-
-  </tr>
-  </thead>
-
-  <tbody>
-
-
-  <tr>
-
-    <td><%= @managerquestion.quality %></td>
-    <td><%= @managerquestion.reliability %></td>
-
-    <td>  <%= @managerquestion.job_knowledge %></td>
-    <td><%= @managerquestion.attendence %><br></td>
-    <td> <%= @managerquestion.commitment %></td>
-    <td><%= @managerquestion.creativity %></td>
-    <td><%= @managerquestion.adherence_to_policy %></td>
-    <td><%= @managerquestion.lead %></td>
-    <td><%= @managerquestion.improvement_needed %></td>
-    <td><%= @managerquestion.accomplishments %></td>
-
-
-
-
-
-
-  </tr>
-  <% manager_total_score = Integer(@managerquestion.quality) + Integer(@managerquestion.reliability) + Integer(@managerquestion.job_knowledge) + Integer(@managerquestion.attendence) + Integer(@managerquestion.commitment) + Integer(@managerquestion.creativity) + Integer(@managerquestion.adherence_to_policy) + Integer(@managerquestion.lead) + Integer(@managerquestion.improvement_needed) +  Integer(@managerquestion.accomplishments)%>
-
-  </tbody>
-</table>
-  <h3>Manager Total Score</h3>
- <h3> <%= manager_total_score %></h3>
-    <% end %>
+        </tbody>
+    </table>
+    <h4>Manager Total Score</h4>
+    <h4><%= manager_total_score %></h4><hr>
+<% end %>
 <% if @hrRemarks != nil %>
-  <h2>Remarks By HR</h2>
-  <h3><%= @hrRemarks.remarks %></h3>
-
+  <h4>Remarks By HR</h4>
+  <h5><%= @hrRemarks.remarks %></h5>
 <% end %>
 
 
+</div>

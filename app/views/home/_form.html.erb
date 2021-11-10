@@ -1,76 +1,50 @@
 <%= form_with model: @user, url: sign_up_path do |f| %>
-  <div class="field from-group">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true%>
-  </div>
+    <div class="field from-group">
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name, autofocus: true %>
+    </div>
+    <div class="field from-group">
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :last_name, autofocus: true %>
+    </div>
+    <div class="field from-group">
+      <%= f.label :email %><br/>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    <div class="field from-group">
+      <%= f.label :phone_number %><br/>
+      <%= f.text_field :phone_number, autofocus: true %>
+    </div>
 
-
-
-  <div class="field from-group">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true %>
-  </div>
-  <div class="field from-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-  <div class="field from-group">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number, autofocus: true%>
-  </div>
-
-  <div class="field from-group">
-    <%= f.label :cnic %><br />
-    <%= f.text_field :cnic, autofocus: true %>
-  </div>
-
-  <div class="field from-group" >
+    <div class="field from-group">
+      <%= f.label :cnic %><br/>
+      <%= f.text_field :cnic, autofocus: true %>
+    </div>
+    <div class="field from-group">
       <%= f.label :role %> <br>
-    <%= f.select :role, ['Manager','Employee'] %> <br>
+      <%= f.select :role, ['Manager', 'Employee'] %> <br>
+    </div>
+    <div>
+      <%= f.label :assigned_manager %><br/>
+      <%= f.collection_select :assigned_manager, @managers, :id, :id, :prompt => true %>
+    </div>
+    <br>
+    <%= f.label :joining_date %><br/>
+    <%= f.date_select :joining_date, { :start_year => 1920, :end_year => 2050 }, :class => 'form-control date-select' %>
+   <div class="field from-group">
+      <%= f.label :password %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br/>
+      <%= f.password_field :password, autocomplete: "new-password" %>
+   </div>
 
-  </div>
-  <div>
-
-
-    <%= f.label :assigned_manager %><br />
-    <%= f.collection_select :assigned_manager, @managers, :id ,:id, :prompt => true %>
-
-
-
-  </div>
-
-
-
-
-
-  <br>
-
-
-
-
-
-
-
-
-  <%= f.label :joining_date %><br />
-  <%= f.date_select :joining_date, { :start_year => 1920, :end_year => 2050 }, :class => 'form-control date-select' %>
-
-
-
-  <div class="field from-group">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit  class:"btn btn-primary " %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation %><br/>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary " %>
+    </div>
 <% end %>

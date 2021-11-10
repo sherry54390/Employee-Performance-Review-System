@@ -1,21 +1,14 @@
-
 <% if user_signed_in? %>
+  <%= paginate @users %>
   <% if current_user.role == "HR" %>
 
-
-      <%= render 'home/roles/hr' %>
-
-
+    <%= render 'home/roles/hr' %>
   <% elsif current_user.role == "Manager" %>
-
     <%= render 'home/roles/manager' %>
-
-    <% else %>
-
+  <% else %>
     <%= render 'home/roles/employee' %>
-
   <% end %>
   <br>
 <% else %>
   <%= render 'home/home_page' %>
-<% end  %>
+<% end %>

@@ -1,20 +1,11 @@
-
-
-
-
 <!-- Official COde -->
 
- <% if current_user.role == "Manager" %>
-<%= render 'survey_forms/manager_form' %>
-
- <% elsif current_user.role == "Employee"%>
-
- <%= render 'survey_forms/employee_form' %>
-
-   <% else %>
-
-<%= render 'survey_forms/hr_form' %>
-
+<% if current_user.role == "Manager" %>
+  <%= render 'survey_forms/manager_form' %>
+<% elsif current_user.role == "Employee" %>
+  <%= render 'survey_forms/employee_form' %>
+<% else %>
+  <%= render 'survey_forms/hr_form' %>
 <% end %>
 
 

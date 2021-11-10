@@ -1,5 +1,4 @@
-<html>
-<head>
+
   <style>
       body {
           background: grey;
@@ -47,117 +46,96 @@
       }
   </style>
 
-</head>
-
-<body>
+<br>
 
 
-
-
-
-
-
-
-
-
-
-
-  <br>
-
-
-
-
-
-
-
-
-
-
-  <br>
-
-
-
-
+<br>
 
 
 <div class="container rounded bg-white mt-5 mb-5">
   <div class="row">
     <div class="col-md-3 border-right">
-      <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><%= @user.first_name %></span><span class="text-black-50"><%= @user.email %></span><span> </span></div>
+      <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+        <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold"><%= @user.first_name %></span><span class="text-black-50"><%= @user.email %></span><span> </span>
+      </div>
     </div>
     <div class="col-md-5 border-right">
       <div class="p-3 py-5">
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h4 class="text-right">Profile Settings</h4>
+          <h4 class="text-right">Edit Employee</h4>
         </div>
+        <%= form_with model: @user, url: edit_path(id: @user.id), method: :post do |f| %>
 
 
-        <%= form_with model: @user, url: edit_path(id: @user.id) , method: :post do |f| %>
+          <div class="row mt-2">
+            <div class="col-md-6">
+              <div class="field from-group">
+                <%= f.label :first_name %><br/>
+                <%= f.text_field :first_name, autofocus: true %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="field from-group">
+                <%= f.label :last_name %><br/>
+                <%= f.text_field :last_name, autofocus: true %>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12">
+              <div class="field from-group">
+                <%= f.label :email %><br/>
+                <%= f.email_field :email, autofocus: true %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="field from-group">
+                <%= f.label :phone_number %><br/>
+                <%= f.text_field :phone_number, autofocus: true %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="field from-group">
+                <%= f.label :cnic %><br/>
+                <%= f.text_field :cnic, autofocus: true %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="field from-group">
+                <%= f.label :role %> <br>
+                <%= f.select :role, ['Manager', 'Employee'] %> <br>
+
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div>
 
 
-        <div class="row mt-2">
-          <div class="col-md-6">
-            <div class="field from-group">
-              <%= f.label :first_name %><br />
-              <%= f.text_field :first_name, autofocus: true%>
-            </div></div>
-          <div class="col-md-6">
-            <div class="field from-group">
-              <%= f.label :last_name %><br />
-              <%= f.text_field :last_name, autofocus: true %>
-            </div></div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-md-12">
-            <div class="field from-group">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true %>
-            </div></div>
-          <div class="col-md-12">
-            <div class="field from-group">
-              <%= f.label :phone_number %><br />
-              <%= f.text_field :phone_number, autofocus: true%>
-            </div></div>
-          <div class="col-md-12">
-            <div class="field from-group">
-              <%= f.label :cnic %><br />
-              <%= f.text_field :cnic, autofocus: true %>
-            </div></div>
-          <div class="col-md-12">
-            <div class="field from-group" >
-              <%= f.label :role %> <br>
-              <%= f.select :role, ['Manager','Employee'] %> <br>
-
-            </div></div>
-          <div class="col-md-12">
-            <div>
+                <%= f.label :assigned_manager %><br/>
+                <%= f.collection_select :assigned_manager, @managers, :id, :id, :prompt => true %>
 
 
-              <%= f.label :assigned_manager %><br />
-              <%= f.collection_select :assigned_manager, @managers, :id ,:id, :prompt => true %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div>
+                <%= f.label :joining_date %><br/>
+                <%= f.date_select :joining_date, { :start_year => 1920, :end_year => 2050 }, :class => 'form-control date-select' %>
+              </div>
+            </div>
 
-
-
-            </div></div>
-          <div class="col-md-12"><div>
-            <%= f.label :joining_date %><br />
-            <%= f.date_select :joining_date, { :start_year => 1920, :end_year => 2050 }, :class => 'form-control date-select' %>
-          </div></div>
-
-        <div class="mt-5 text-center"><div class="actions">
-          <%= f.submit  class:"btn btn-primary profile-button " %>
-        </div></div>
+            <div class="mt-5 text-center">
+              <div class="actions">
+                <%= f.submit class: "btn btn-primary profile-button " %>
+              </div>
+            </div>
 
         <% end %>
-          </div>
-    </div>
+        </div>
+      </div>
 
+    </div>
   </div>
 </div>
 </div>
-</div>
 
-
-</body>
-
-</html>

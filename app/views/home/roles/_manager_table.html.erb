@@ -1,0 +1,36 @@
+<table class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+  <tr>
+
+    <th>Name</th>
+    <th>Cnic</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Role</th>
+    <th>Joining Date</th>
+
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <% @users.each do |manager| %>
+
+    <tr>
+      <% if manager.role == "Manager" %>
+        <td><%= manager.first_name %>
+          <%= manager.last_name %></td>
+
+        <td>  <%= manager.cnic %></td>
+        <td><%= manager.email %><br></td>
+        <td> <%= manager.phone_number %></td>
+        <td><%= manager.role %></td>
+        <td><%= manager.joining_date %></td>
+
+
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

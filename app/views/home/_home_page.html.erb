@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>Infinite Loop - Bootstrap 4.0 HTML Template</title>
-  <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+  <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css"/>
   <link rel="stylesheet" href="slick/slick.css">
   <link rel="stylesheet" href="slick/slick-theme.css">
   <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/tooplate-infinite-loop.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/tooplate-infinite-loop.css"/>
   <!--
   Tooplate 2117 Infinite Loop
   https://www.tooplate.com/view/2117-infinite-loop
   -->
-<style>
+  <style>
 
 
-</style>
+  </style>
 </head>
 <body>
 <!-- Hero section -->
@@ -32,7 +32,7 @@
         Test Project By
         <br>Muhammad Shaharyar Qureshi
       </p>
-      <div><%= link_to "Sign In" , new_user_session_path , class:"btn btn-dark" %></div>
+      <div><%= link_to "Sign In", new_user_session_path, class: "btn btn-dark" %></div>
     </div>
   </div>
 
@@ -62,7 +62,8 @@
         <div class="tm-intro-text-container">
           <h2 class="tm-text-primary mb-4">HR MANAGEMENT</h2>
           <p class="mb-4 tm-intro-text">
-            Streamline hiring, On-boarding, and employee records. Send Offers, Track PTO, Goals, Attendance, Timesheets, Tasks, Set Training Agendas and more.</p>
+            Streamline hiring, On-boarding, and employee records. Send Offers, Track PTO, Goals, Attendance, Timesheets,
+            Tasks, Set Training Agendas and more.</p>
         </div>
       </div>
 
@@ -73,7 +74,8 @@
         <div class="tm-intro-text-container">
           <h2 class="tm-text-primary mb-4">APPLICANT MANAGEMENT</h2>
           <p class="mb-4 tm-intro-text">
-            Manage Jobs & Source Applicants; From shortlisting, scheduling interviews to grading. Source 100,000s of applicants from our ActiveApplicant platform.</p>
+            Manage Jobs & Source Applicants; From shortlisting, scheduling interviews to grading. Source 100,000s of
+            applicants from our ActiveApplicant platform.</p>
         </div>
       </div>
 
@@ -92,15 +94,14 @@
       </div>
       <div class="col-lg-5">
 
-        </div>
       </div>
+    </div>
 
-    </div><!-- third row -->
+  </div><!-- third row -->
 
   </div>
 
 </section>
-
 
 
 <!-- Contact -->
@@ -119,15 +120,14 @@
 
       <div class="col-sm-12 col-md-6">
         <form action="" method="get">
-          <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required />
-          <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required />
+          <input id="name" name="name" type="text" placeholder="Your Name" class="tm-input" required/>
+          <input id="email" name="email" type="email" placeholder="Your Email" class="tm-input" required/>
           <textarea id="message" name="message" rows="8" placeholder="Message" class="tm-input" required></textarea>
           <button type="submit" class="btn tm-btn-submit">Submit</button>
         </form>
       </div>
 
       <div class="col-sm-12 col-md-6">
-
 
 
         <div class="contact-item">
@@ -177,82 +177,82 @@
 <script src="js/bootstrap.min.js"></script>
 <script>
 
-    function getOffSet(){
+    function getOffSet() {
         var _offset = 450;
         var windowHeight = window.innerHeight;
 
-        if(windowHeight > 500) {
+        if (windowHeight > 500) {
             _offset = 400;
         }
-        if(windowHeight > 680) {
+        if (windowHeight > 680) {
             _offset = 300
         }
-        if(windowHeight > 830) {
+        if (windowHeight > 830) {
             _offset = 210;
         }
 
         return _offset;
     }
 
-    function setParallaxPosition($doc, multiplier, $object){
+    function setParallaxPosition($doc, multiplier, $object) {
         var offset = getOffSet();
         var from_top = $doc.scrollTop(),
-            bg_css = 'center ' +(multiplier * from_top - offset) + 'px';
-        $object.css({"background-position" : bg_css });
+            bg_css = 'center ' + (multiplier * from_top - offset) + 'px';
+        $object.css({"background-position": bg_css});
     }
 
     // Parallax function
     // Adapted based on https://codepen.io/roborich/pen/wpAsm
-    var background_image_parallax = function($object, multiplier, forceSet){
+    var background_image_parallax = function ($object, multiplier, forceSet) {
         multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
         multiplier = 1 - multiplier;
         var $doc = $(document);
         // $object.css({"background-attatchment" : "fixed"});
 
-        if(forceSet) {
+        if (forceSet) {
             setParallaxPosition($doc, multiplier, $object);
         } else {
-            $(window).scroll(function(){
+            $(window).scroll(function () {
                 setParallaxPosition($doc, multiplier, $object);
             });
         }
     };
 
-    var background_image_parallax_2 = function($object, multiplier){
+    var background_image_parallax_2 = function ($object, multiplier) {
         multiplier = typeof multiplier !== 'undefined' ? multiplier : 0.5;
         multiplier = 1 - multiplier;
         var $doc = $(document);
-        $object.css({"background-attachment" : "fixed"});
+        $object.css({"background-attachment": "fixed"});
 
-        $(window).scroll(function(){
-            if($(window).width() > 768) {
+        $(window).scroll(function () {
+            if ($(window).width() > 768) {
                 var firstTop = $object.offset().top,
                     pos = $(window).scrollTop(),
                     yPos = Math.round((multiplier * (firstTop - pos)) - 186);
 
                 var bg_css = 'center ' + yPos + 'px';
 
-                $object.css({"background-position" : bg_css });
+                $object.css({"background-position": bg_css});
             } else {
-                $object.css({"background-position" : "center" });
+                $object.css({"background-position": "center"});
             }
         });
     };
 
-    $(function(){
+    $(function () {
         // Hero Section - Background Parallax
         background_image_parallax($(".tm-parallax"), 0.30, false);
         background_image_parallax_2($("#contact"), 0.80);
         background_image_parallax_2($("#testimonials"), 0.80);
 
         // Handle window resize
-        window.addEventListener('resize', function(){
+        window.addEventListener('resize', function () {
             background_image_parallax($(".tm-parallax"), 0.30, true);
         }, true);
 
         // Detect window scroll and update navbar
-        $(window).scroll(function(e){
-            if($(document).scrollTop() > 120) {
+        $(window).scroll(function (e) {
+            if ($(document).scrollTop() > 120) {
                 $('.tm-navbar').addClass("scroll");
             } else {
                 $('.tm-navbar').removeClass("scroll");
@@ -260,7 +260,7 @@
         });
 
         // Close mobile menu after click
-        $('#tmNav a').on('click', function(){
+        $('#tmNav a').on('click', function () {
             $('.navbar-collapse').removeClass('show');
         })
 
@@ -272,14 +272,14 @@
 
         // Add smooth scrolling to all links
         // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
-        $("a").on('click', function(event) {
+        $("a").on('click', function (event) {
             if (this.hash !== "") {
                 event.preventDefault();
                 var hash = this.hash;
 
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
-                }, 600, 'easeInOutExpo', function(){
+                }, 600, 'easeInOutExpo', function () {
                     window.location.hash = hash;
                 });
             } // End if
@@ -289,7 +289,7 @@
         $('.tm-gallery').magnificPopup({
             delegate: 'a',
             type: 'image',
-            gallery: { enabled: true }
+            gallery: {enabled: true}
         });
 
         $('.tm-testimonials-carousel').slick({

@@ -1,8 +1,8 @@
 <html>
 <head>
   <style>
-      body{
-          margin-top:40px;
+      body {
+          margin-top: 40px;
       }
 
       .stepwizard-step p {
@@ -75,7 +75,7 @@
               }
           });
 
-          allNextBtn.click(function(){
+          allNextBtn.click(function () {
               var curStep = $(this).closest(".setup-content"),
                   curStepBtn = curStep.attr("id"),
                   nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
@@ -83,8 +83,8 @@
                   isValid = true;
 
               $(".form-group").removeClass("has-error");
-              for(var i=0; i<curInputs.length; i++){
-                  if (!curInputs[i].validity.valid){
+              for (var i = 0; i < curInputs.length; i++) {
+                  if (!curInputs[i].validity.valid) {
                       isValid = false;
                       $(curInputs[i]).closest(".form-group").addClass("has-error");
                   }
@@ -156,10 +156,9 @@
       </div>
 
 
-
     </div>
   </div>
-  <%= form_for :survey_forms  do |f| %>
+  <%= form_for :survey_forms do |f| %>
 
     <!-- Step 1 -->
     <div class="row setup-content" id="step-1">
@@ -168,14 +167,14 @@
           <h3> Question 1</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.quality %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.quality  %></h3>
-            <%= f.label :"Quality - The extent to which an employee's work is completed thoroughly and correctly following established process & procedures. Required paperwork is thorough and neat."%><br />
-
+            <h3> Rating By Manager --> <%= @managerquestion.quality %></h3>
+            <%= f.label :"Quality - The extent to which an employee's work is completed thoroughly and correctly following established process & procedures. Required paperwork is thorough and neat." %>
+            <br/>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -187,11 +186,12 @@
           <h3> Question 2</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.reliability %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.reliability  %></h3>
-            <%= f.label :"Productivity / Independence / Reliability - The extent to which an employee produces a significant volume of work efficiently in a specified period of time. Ability to work independently with little or no direction/ follow-up to complete tasks/job assignment."%><br />
+            <h3> Rating By Manager --> <%= @managerquestion.reliability %></h3>
+            <%= f.label :"Productivity / Independence / Reliability - The extent to which an employee produces a significant volume of work efficiently in a specified period of time. Ability to work independently with little or no direction/ follow-up to complete tasks/job assignment." %>
+            <br/>
 
           </div>
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -203,11 +203,12 @@
           <h3> Question 3</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.job_knowledge %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.job_knowledge  %></h3>
-            <%= f.label :"Job Knowledge - The extent to which an employee perform the job. Employee possesses the practical and technical knowledge required of the job. " %><br />
+            <h3> Rating By Manager --> <%= @managerquestion.job_knowledge %></h3>
+            <%= f.label :"Job Knowledge - The extent to which an employee perform the job. Employee possesses the practical and technical knowledge required of the job. " %>
+            <br/>
 
           </div>
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -219,14 +220,14 @@
           <h3> Question 4</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.attendence %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.attendence  %></h3>
-            <%= f.label :"Attendance -The extent to which an employee is punctual, observes prescribed work break/meal periods and has an acceptable overall attendance record. Employee's willingness to work overtime as required. Employee comes in as the time prescribed by office rules. " %><br />
-
+            <h3> Rating By Manager --> <%= @managerquestion.attendence %></h3>
+            <%= f.label :"Attendance -The extent to which an employee is punctual, observes prescribed work break/meal periods and has an acceptable overall attendance record. Employee's willingness to work overtime as required. Employee comes in as the time prescribed by office rules. " %>
+            <br/>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -239,14 +240,14 @@
           <h3> Question 5</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.commitment %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.commitment  %></h3>
-            <%= f.label :"Interpersonal Relationships / Cooperation /Commitment - The extent to which employee is willing and demonstrates the ability to cooperate, work and communicate with coworkers, supervisors, subordinates and/or outside contacts. Employee accepts and responds to change in a positive manner. Accepts job assignments and additional duties willingly, takes responsibility for own performance and job assignments. " %><br />
-
+            <h3> Rating By Manager --> <%= @managerquestion.commitment %></h3>
+            <%= f.label :"Interpersonal Relationships / Cooperation /Commitment - The extent to which employee is willing and demonstrates the ability to cooperate, work and communicate with coworkers, supervisors, subordinates and/or outside contacts. Employee accepts and responds to change in a positive manner. Accepts job assignments and additional duties willingly, takes responsibility for own performance and job assignments. " %>
+            <br/>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -258,14 +259,14 @@
           <h3> Question 6</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.creativity %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.creativity  %></h3>
-            <%= f.label :"Initiative/ Creativity - The extent to which an employee seeks out new assignments, proposes improved work methods, suggests ideas to eliminate waste, finds new and better ways of doing things. " %><br />
-
+            <h3> Rating By Manager --> <%= @managerquestion.creativity %></h3>
+            <%= f.label :"Initiative/ Creativity - The extent to which an employee seeks out new assignments, proposes improved work methods, suggests ideas to eliminate waste, finds new and better ways of doing things. " %>
+            <br/>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -277,13 +278,14 @@
           <h3> Question 7</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.adherence_to_policy %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.adherence_to_policy  %></h3>
-            <%= f.label :"Adherence to Policy - The extent to which the employees follows company policies, procedures and work conduct rules. Complies with and follows all safety rules and regulations, wears required safety equipment. " %><br />
+            <h3> Rating By Manager --> <%= @managerquestion.adherence_to_policy %></h3>
+            <%= f.label :"Adherence to Policy - The extent to which the employees follows company policies, procedures and work conduct rules. Complies with and follows all safety rules and regulations, wears required safety equipment. " %>
+            <br/>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -295,14 +297,14 @@
           <h3> Question 8</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.lead %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.lead  %></h3>
-            <%= f.label :"Lead (if applicable)- The extent to which the employee demonstrates proper judgment and decision-making skills when directing others. Directs work flow in assigned areas effectively to meet production / area goals " %><br />
-
+            <h3> Rating By Manager --> <%= @managerquestion.lead %></h3>
+            <%= f.label :"Lead (if applicable)- The extent to which the employee demonstrates proper judgment and decision-making skills when directing others. Directs work flow in assigned areas effectively to meet production / area goals " %>
+            <br/>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
@@ -314,23 +316,16 @@
           <h3> Question 9</h3>
           <div class="form-group">
             <h3> Rating By Employee --> <%= @quest.improvement_needed %></h3>
-            <h3> Rating By Manager --> <%= @managerquestion.improvement_needed  %></h3>
-            <%= f.label :"Specific areas of needed improvement and goals set for next review:"%>
-
+            <h3> Rating By Manager --> <%= @managerquestion.improvement_needed %></h3>
+            <%= f.label :"Specific areas of needed improvement and goals set for next review:" %>
 
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
-
-
-
-
-
-
 
 
     <div class="row setup-content" id="step-10">
@@ -339,20 +334,20 @@
           <h3> Question 10</h3>
           <div class="form-group">
 
-            <%= f.label :"Give Remarks" %><br />
-            <%= f.text_field :remarks, autofocus: true , class:"form-control"%>
+            <%= f.label :"Give Remarks" %><br/>
+            <%= f.text_field :remarks, autofocus: true, class: "form-control" %>
 
           </div>
 
-          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
         </div>
       </div>
     </div>
 
 
 
-    <%= f.text_field :user_id, value: @quest.user_id ,hidden:true %>
-    <%= f.text_field :submitted_by, value: current_user.email , hidden:true %>
+    <%= f.text_field :user_id, value: @quest.user_id, hidden: true %>
+    <%= f.text_field :submitted_by, value: current_user.email, hidden: true %>
 
     <!-- Step 11-->
     <div class="row setup-content" id="step-11">
@@ -365,9 +360,6 @@
     </div>
   <% end %>
 </div>
-
-
-
 
 
 </body>

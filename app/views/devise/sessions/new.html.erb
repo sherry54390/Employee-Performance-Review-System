@@ -35,7 +35,7 @@
    */
 
 
-      html,body{
+      html, body {
           background-image: url('https://getwallpapers.com/wallpaper/full/b/4/8/185436.jpg');
           background-size: cover;
           background-repeat: no-repeat;
@@ -43,81 +43,80 @@
           font-family: 'Numans', sans-serif;
       }
 
-      .container{
+      .container {
           height: 100%;
           align-content: center;
       }
 
-      .card{
+      .card {
           height: 370px;
           margin-top: auto;
           margin-bottom: auto;
           width: 400px;
-          background-color: rgba(0,0,0,0.5) !important;
+          background-color: rgba(0, 0, 0, 0.5) !important;
       }
 
-      .social_icon span{
+      .social_icon span {
           font-size: 60px;
           margin-left: 10px;
           color: #D2C200;
       }
 
-      .social_icon span:hover{
+      .social_icon span:hover {
           color: white;
           cursor: pointer;
       }
 
-      .card-header h3{
+      .card-header h3 {
           color: white;
       }
 
-      .social_icon{
+      .social_icon {
           position: absolute;
           right: 20px;
           top: -45px;
       }
 
-      .input-group-prepend span{
+      .input-group-prepend span {
           width: 50px;
           background-color: #D2C200;
           color: black;
-          border:0 !important;
+          border: 0 !important;
       }
 
-      input:focus{
-          outline: 0 0 0 0  !important;
+      input:focus {
+          outline: 0 0 0 0 !important;
           box-shadow: 0 0 0 0 !important;
 
       }
 
-      .remember{
+      .remember {
           color: white;
       }
 
-      .remember input
-      {
+      .remember input {
           width: 20px;
           height: 20px;
           margin-left: 15px;
           margin-right: 5px;
       }
 
-      .login_btn{
+      .login_btn {
           color: black;
           background-color: #FFC312;
           width: 100px;
       }
 
-      .login_btn:hover{
+      .login_btn:hover {
           color: black;
           background-color: white;
       }
 
-      .links{
+      .links {
           color: white;
       }
 
-      .links a{
+      .links a {
           margin-left: 4px;
       }
   </style>
@@ -140,14 +139,14 @@
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-user"></i></span>
             </div>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class:"form-control" ,placeholder:"email"%>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "email" %>
 
           </div>
           <div class="input-group form-group">
             <div class="input-group-prepend">
               <span class="input-group-text"><i class="fas fa-key"></i></span>
             </div>
-            <%= f.password_field :password, autocomplete: "current-password" ,placeholder:"password",class:"form-control"%>
+            <%= f.password_field :password, autocomplete: "current-password", placeholder: "password", class: "form-control" %>
           </div>
           <div class="row align-items-center remember">
             <% if devise_mapping.rememberable? %>
@@ -157,7 +156,7 @@
             <% end %>
           </div>
           <div class="form-group">
-            <%= f.submit "Log in", class:"btn btn-secondary"%>
+            <%= f.submit "Log in", class: "btn btn-secondary" %>
           </div>
         <% end %>
       </div>

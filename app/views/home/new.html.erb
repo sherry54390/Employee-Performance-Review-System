@@ -1,15 +1,14 @@
 <% if user_signed_in? %>
   <% if current_user.role == "HR" %>
-<div class="card" style="width:1000px; length:500px">
-    <div class="card-header">
-      Add a user to Active HR
+    <div class="card" style="width:1000px; length:500px">
+      <div class="card-header">
+        Add a user to Active HR
+      </div>
+      <div class="card-body">
+        <%= render 'home/form' %>
+      </div>
     </div>
-
-    <div class="card-body">
-      <%= render 'home/form' %>
-    </div>
-</div>
-    <% else %>
-    <% controller.redirect_to  root_path, notice: 'You dont have Permission to go there' %>
-    <% end %>
+  <% else %>
+    <% controller.redirect_to root_path, notice: 'You dont have Permission to go there' %>
+  <% end %>
 <% end %>
