@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   get 'edit', to: 'home#edit'
   post 'edit', to: 'home#update'
   resources :home
+  resources :questions
+  get 'edit_ques', to: 'questions#edit'
+  post 'edit_ques', to: 'questions#update', as: 'edit_quest'
+  post 'questions/new' => 'questions#create', as: 'create_question'
+  #get 'questions' => 'questions#edit', as: 'edit_questions'
+  #get 'question/edit', to: 'question#edit', as: 'edi_question'
   #get 'managers' => 'home/roles' , as: 'view_manager'
   #get 'fill_form' ,to: 'survey_forms#fill_form/:id', as: 'fill_form'
   #get 'survey_form/fill_form/:id', to: 'survey_forms#fill_form', as: 'fill_form'

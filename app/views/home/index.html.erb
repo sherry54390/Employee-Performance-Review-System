@@ -3,6 +3,7 @@
   <% if current_user.role == "HR" %>
 
     <%= render 'home/roles/hr' %>
+
   <% elsif current_user.role == "Manager" %>
     <%= render 'home/roles/manager' %>
   <% else %>

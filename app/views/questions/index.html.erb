@@ -1,0 +1,40 @@
+<h1> Hello World</h1>
+
+
+
+
+
+
+<table class="table table-striped table-borderless table-hover">
+  <thead class="thead-dark">
+  <tr>
+
+
+    <th>Question</th>
+    <th></th>
+    <th></th>
+
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+
+  <% @all_questions.each do |question| %>
+
+
+    <tr>
+        <td><%= question.questions %></td>
+      <td><%= link_to "Edit", edit_question_path(question.id) %></td>
+      <td><%= link_to "Delete", question_path(question.id) , :confirm => "Are you sure?", :method => :delete%></td>
+
+
+    </tr>
+  <% end %>
+
+
+
+  </tbody>
+
+</table>
