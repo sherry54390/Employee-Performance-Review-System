@@ -1,24 +1,22 @@
-# README
+EMPLOYEE PERFORMANCE REVIEW SYSTEM
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Live Demo ==> https://epr-system.herokuapp.com/
+AThere are 3 actors in this app:
 
-Things you may want to cover:
+HR - The HR can create, create and destroy a Employee and Manager and can assign or remove employee under any manager. Hr can also give his remarks 
+Manager - The Manager can fill his review form against any employee who is working under that manager 
+Employee - The Employee can fill his review form after 6 months of joining date.
 
-* Ruby version
+Test users credentials:
 
-* System dependencies
+HR:
+email: ahsan.hr@engin.tech
+password: 123456
 
-* Configuration
+Manager:
+email: hamad@engin.tech
+password: 123456
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Employee:
+email: shaharyar.qureshi@engin.tech
+password: 123456
