@@ -1,7 +1,9 @@
 EMPLOYEE PERFORMANCE REVIEW SYSTEM
 
 Live Demo ==> https://epr-system.herokuapp.com/
-AThere are 3 actors in this app:
+
+
+There are 3 actors in this app:
 
 HR - The HR can create, create and destroy a Employee and Manager and can assign or remove employee under any manager. Hr can also give his remarks 
 Manager - The Manager can fill his review form against any employee who is working under that manager 
