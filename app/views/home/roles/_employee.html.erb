@@ -107,7 +107,7 @@
       #accordion {
           background-color: transparent;
           max-width: 100%;
-          margin-bottom: 200px;
+          margin-bottom: 5px;
       }
 
 
@@ -282,32 +282,54 @@
     <ul class="text"><%= current_user.first_name %> <%= current_user.last_name %></ul>
     <div class="text1"><%= current_user.role %></div>
 
-
+    <% if current_user.survey_forms.count >= 1 %>
+      <% @abc = current_user.survey_forms[0] %>
+      <%#= @abc %>
+      <h1>Your Form Details</h1>
+      <table  class="table table-striped table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+          <th>Form Created At</th>
+          <th>Submitted by</th>
+          <th>Form Id</th>
+          <th>View Form</th>
+        </thead>
+        <tbody>
+        <tr>
+          <td ><%= @abc.created_at %></td>
+          <td ><%= current_user.email %></td>
+          <td ><%= @abc.id %></td>
+          <td><%= link_to 'Review Form', survey_form_path(id: @abc.id) %></td>
+        </tr>
+      </tbody>
+      </table>
+    <% else %>
     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading " role="tab" id="headingOne">
           <h4 class="panel-title ">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="" aria-controls="collapseOne">
               <div class="title  btn btn-danger btn-outline btn-lg">
-                <% if current_user.survey_forms.count >= 1 %>
-                  <td><%= link_to 'Form Submitted' %></td>
-
-
-                <% else %>
                   <td><%= link_to 'Submit Form', new_survey_form_path %></td>
                 <% end %>
-
               </div>
             </a>
           </h4>
         </div>
-        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-          <div style="align-text:center" class="panel-body">
-            <h3 style="margin-left: 100px">Form Status</h3>
-          </div>
-        </div>
-      </div>
 
+      </div>
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingThree">
+          <h4 style="text-align: center" class="panel-title">
+            Form Status
+          </h4>
+        </div>
+
+      </div>
+    </div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="panel panel-default">
         <div class="panel-heading" role="tab" id="headingThree">
           <h4 class="panel-title">
